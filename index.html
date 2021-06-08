@@ -60,7 +60,41 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 		
-          <tr onmouseout="pisa_start()" onmouseover="pisa_stop()">
+          
+	  <tr onmouseout="pisa_start()" onmouseover="pisa_stop()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='pisa_image'><img src='images/pisa_start.jpg'></div>
+                <img src='images/pisa_stop.jpg'>
+              </div>
+              <script type="text/javascript">
+                function pisa_start() {
+                  document.getElementById('pisa_image').style.opacity = "1";
+                }
+
+                function pisa_stop() {
+                  document.getElementById('pisa_image').style.opacity = "0";
+                }
+                hallucinet_start()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2102.07355">
+                <papertitle>Win-Fail Action Recognition</papertitle>
+              </a>
+              <br>
+              <strong>Paritosh Parmar</strong>, Brendan Morris
+              <br>
+              <em>arXiv Preprint</em>, 2021 &nbsp 
+              <br>
+              <a href="https://arxiv.org/abs/2102.07355">arxiv</a> <b>|</b>
+	      <a href="https://github.com/ParitoshParmar/Win-Fail-Action-Recognition">dataset</a> <b>|</b>
+              <p></p>
+              <p><b>TL;DR:</b> <tldr>Trying to shift focus from recognizing patterns to gaining truer understanding of videos by teaching CNNs to differentiate between successful and failed attempts at various tasks.<tldr></p>
+            </td>
+          </tr>
+		  
+	  <tr onmouseout="pisa_start()" onmouseover="pisa_stop()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
                 <div class="two" id='pisa_image'><img src='images/pisa_start.jpg'></div>
