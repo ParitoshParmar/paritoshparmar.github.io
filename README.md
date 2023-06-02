@@ -2,4 +2,4 @@
 
 Link: [paritoshparmar.github.io](https://paritoshparmar.github.io/)
 
-Layout inspired from: [jonbarron.info/](https://jonbarron.info/)
+Layout inspired from: [jonbarron.info](https://jonbarron.info/)
