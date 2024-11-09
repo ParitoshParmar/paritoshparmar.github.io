@@ -1,12 +1,280 @@
- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="CausalChaos! Causal VideoQA Dataset" name="description">
+    <meta content="Paritosh Parmar" name="author">
+    <title>CausalChaos! QA Dataset</title>
+    
+    <!-- Font Awesome for icons without integrity attribute -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Bulma CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Dongle&family=Noto+Sans:ital,wdth,wght@0,75,100..900;1,75,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap&family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 120px;
+            line-height: 1.;
+            
+        }
+        h1 {
+            font-family: "Bangers", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 100px;
+            line-height: 1;
+            text-align: justify;
+        }
+        h2 {
+            color: #940000;
+            font-family: "Noto Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            font-variation-settings:"wdth" 75;
+            font-size: 32px;
+            text-align: left;
+            line-height: 1.2;
+        }
+        conference {
+            color: #333;
+            font-family: "Noto Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            font-variation-settings:"wdth" 75;
+            font-size: 20px;
+            text-align: left;
+            line-height: 1.2;
+        }
+        h3 {
+            color: #333;
+            font-size: 2.0em;  /* Title font size */
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .authors, .section {
+            margin-bottom: 20px;
+            font-family: "Noto Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings:"wdth" 75;
+            font-size: 26px;
+            line-height: 1.1;
+        }
+        .affiliations{
+            margin-bottom: 20px;
+            font-family: "Noto Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+            font-variation-settings:"wdth" 75;
+            font-size: 20px;
+        }
+        /* Center-align specific sections */
+        header, .tldr, .results {
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            /* text-align: center; */
+            font-size: 20px;
+            text-align: justify;  
+        }
+        /* justify specific sections */
+        .abstract, .video_src, .matack {
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            /* text-align: center; */
+            font-size: 20px;
+            text-align: justify;  
+            line-height: 1.1;
+        }
+        /* Styling for superscripts */
+        sup {
+            font-size: 0.8em;
+            vertical-align: super;
+        }
+        /* Custom button styling similar to Bulma */
+        .link-block {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            border-radius: 50px;
+            background-color: #333;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #444;
+        }
+        .icon {
+            margin-right: 8px;
+        }
+        /* Ensure Font Awesome styles apply */
+        .fab {
+            font-family: "Font Awesome 5 Brands" !important;
+        }
+
+         /* Custom font size for inline code */
+         code {
+            font-size: 0.2em; /* Adjust the size as needed */
+        }
+        /* Custom font size for code blocks */
+        pre code {
+            font-size: 0.7em; /* Adjust for multi-line code in <pre><code> */
+        }
+
+        website_usage {
+              font-family: "Ysabeau SC", sans-serif;
+              font-optical-sizing: auto;
+              font-weight: 700;
+              font-style: normal;
+              font-size: 18px;
+        }
+
+    </style>
 </head>
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+    <header>
+        <h1>CausalChaos!</h1> <h2>Dataset for Comprehensive Causal Action Question Answering Over Longer Causal Chains Grounded in Dynamic Visual Scenes</h2> 
+        <br>
+        <p class="authors">
+            <a href="https://paritoshparmar.github.io">Paritosh Parmar</a><sup>1,2</sup>, Eric Peh<sup>1,2</sup>, Ruirui Chen<sup>1</sup>, Ting En Lam<sup>3</sup>, Yuhan Chen<sup>4</sup>, Elston Tan<sup>5</sup>, Basura Fernando<sup>1,2</sup>
+        </p>
+        <p class="affiliations">
+            <sup>1</sup>IHPC, A*STAR, Singapore 
+            <sup>2</sup>CFAR, A*STAR, Singapore
+            <sup>3</sup>Nanyang Technological University
+            <sup>4</sup>National University of Singapore
+            <sup>5</sup>Singapore Polytechnic
+        </p>
+        <conference>NeurIPS 2024</conference>
+        <br>
+        <br>
+        <!-- Paper Link -->
+        <span class="link-block">
+            <a class="button is-dark" href="https://arxiv.org/abs/2404.01299" target="_blank">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i> <!-- GitHub icon here -->
+                </span>
+                <span>Paper</span>
+            </a>
+        </span>
+        <!-- Code Link -->
+        <span class="link-block">
+            <a class="button is-dark" href="https://github.com/LUNAProject22/CausalChaos" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-github"></i> <!-- GitHub icon here -->
+                </span>
+                <span>Code</span>
+            </a>
+        </span>
+        <!-- Dataset Link Button with Emoji Icon -->
+        <span class="link-block">
+            <a class="button is-dark" href="https://github.com/LUNAProject22/CausalChaos" target="_blank">
+                <span class="icon">
+                    💾 <!-- Emoji as an icon -->
+                </span>
+                <span>Dataset</span>
+            </a>
+        </span>
+    </header>
+
+    <section class="teaser_image">
+        <p>
+            <br>
+            <br>
+            <!-- Including the teaser image -->
+            <img alt="CausalChaos! Dataset Teaser Figure"
+            class="teaser_image"
+            src="causalchaos_teaser.png">
+        </p>
+     </section>
+
+<!--    <section class="tldr section">-->
+<!--        <p>-->
+<!--        <br>-->
+<!--        <dl>-->
+<!--            <dt>Current Causal Video Question Answering datasets have the following limitations: </dt>-->
+<!--                <dd>- black hot drink</dd>-->
+<!--            <dt>To address these gaps we build a high-quality dataset with the following characteristics:</dt>-->
+<!--                <dd>- white cold drink</dd>-->
+<!--        </dl>   -->
+<!--        </p> -->
+<!--    </section> -->
+
+    <section class="abstract section">
+        <h2>Abstract</h2>
+        <p>
+            Causal video question answering (QA) has garnered increasing interest, yet existing datasets often lack depth in causal reasoning. To address this gap, we capitalize on the unique properties of cartoons and construct CausalChaos!, a novel, challenging causal Why-QA dataset built upon the iconic "Tom and Jerry" cartoon series. Cartoons use the principles of animation that allow animators to create expressive, unambiguous causal relationships between events to form a coherent storyline. Utilizing these properties, along with thought-provoking questions and multi-level answers (answer and detailed causal explanation), our questions involve causal chains that interconnect multiple dynamic interactions between characters and visual scenes. These factors demand models to solve more challenging, yet well-defined causal relationships. We also introduce hard incorrect answer mining, including a causally confusing version that is even more challenging. While models perform well, there is much room for improvement, especially, on open-ended answers. We identify more advanced/explicit causal relationship modeling & joint modeling of vision and language as the immediate areas for future efforts to focus upon. Along with the other complementary datasets, our new challenging dataset will pave the way for these developments in the field. 
+        </p>
+    </section>
+
+    <section class="video_src section">
+        <h2>Dataset Videos</h2>
+        <p>We provide the annotations, but the videos will have to be bought by the users. For example, users may buy it from <a href=https://www.warnerbros.com/tv/tom-and-jerry-1965-volume-1>here</a>. Cost is reasonable---for example, whole series is priced around $60. In case needed, for synchronization between different video sources, we provide synchronization frames to help fit our annotations to your video source. </p>
+        
+    </section>
+
+    <!-- <section class="paper section">
+        <h2>Paper</h2>
+        <p><a href="link-to-paper.pdf" target="_blank">Read the full paper here</a>.</p>
+    </section> -->
+
+<!--    <section class="results section">-->
+<!--        <h2>Results</h2>-->
+<!--        <p>A summary of your key findings or main results from the research. You could include images, charts, or tables here if you want to expand the page later.</p>-->
+<!--    </section>-->
+
+    <section class="matack section">
+    <h2>Material Acknowledgement and Disclaimer</h2>
+    <p>Tom and Jerry is a material of Turner Entertainment
+        Company (Warner Bros. Entertainment Inc.). All rights reserved. We do not claim any ownership of
+        or rights to the Tom and Jerry material. All other trademarks, service marks, trade names and any
+        other material referenced in this document are the property of their respective owners.</p>
+    </section>
+
+    <!-- <section class="references section">
+        <h2>Citation</h2>
+        <ul>
+            <li>Reference 1: Author(s), Title, Conference/Journal, Year.</li>
+        </ul>
+    </section> -->
+
+    <section class="citation section">
+        <div class="container is-max-desktop content">
+          <h2>Citation</h2>
+          <pre><code>@article{parmar2024causalchaos,
+            title={CausalChaos! Dataset for Comprehensive Causal Action Question Answering Over Longer Causal Chains Grounded in Dynamic Visual Scenes},
+            author={Parmar, Paritosh and Peh, Eric and Chen, Ruirui and Lam, Ting En and Chen, Yuhan and Tan, Elston and Fernando, Basura},
+            journal={arXiv preprint arXiv:2404.01299},
+            year={2024}
+          }</code></pre>
+        </div>
+      </section>
+
+    <footer>
+        <p><website_usage>Website designed by <a href="https://paritoshparmar.github.io">Paritosh Parmar</a> and licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License.</a> Please feel free to use it for your projects (<a href="https://github.com/ParitoshParmar/Project-Website">Source Code</a>), but consider acknowledging in your webpage by linking back to this page!</website_usage></p>
+    </footer>
 
 </body>
-</html> 
+</html>
